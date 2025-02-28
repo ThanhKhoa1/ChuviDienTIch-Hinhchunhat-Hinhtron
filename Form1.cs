@@ -86,7 +86,7 @@ namespace Chuvihinhchunhat
             double dai = double.Parse(txtChieudai.Text);
             double rong = double.Parse(txtChieurong.Text);
             if (rdbCv.Checked) {
-                lblkq2.Text += "Chu Vi : " + TinhChuvi(dai, rong);
+                lblkq2.Text = "Chu Vi : " + TinhChuvi(dai, rong);
             }
             if (rdbDt.Checked)
             {
