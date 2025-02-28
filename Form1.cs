@@ -52,5 +52,51 @@ namespace Chuvihinhchunhat
             lblCv.Text = "CV hinh tron : " + (duongkinh * Math.PI);
             lblDt.Text = "DT hinh tron : " + (bankinh * 2 * Math.PI);
         }
+
+        private void lblketqua_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnketqua_Click(object sender, EventArgs e)
+        {
+            double dai = double.Parse(txtChieudai.Text);
+            double rong = double.Parse(txtChieurong.Text);
+            lblketqua.Text = "";
+
+            if (cbDT.Checked)
+            { 
+            lblketqua.Text = " Dien tich : " + TinhDienTich(dai, rong ) + "\n" ;
+            }
+            if (cbCv.Checked)
+            {
+                lblketqua.Text += " Chu vi : " + TinhChuvi(dai,rong) + "\n";
+            }
+        }
+        double TinhDienTich(double dai , double rong) { return dai * rong; }
+        double TinhChuvi(double dai , double rong) { return (dai + rong) * 2; }
+
+        private void btnketqua2_Click(object sender, EventArgs e)
+        {
+            lblketqua.Text = "Dien Tich : " + TinhDienTich(double.Parse(txtChieudai.Text),double.Parse(txtChieurong.Text)) + "\n Chu Vi : " + TinhChuvi(double.Parse(txtChieudai.Text),double.Parse(txtChieurong.Text));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double dai = double.Parse(txtChieudai.Text);
+            double rong = double.Parse(txtChieurong.Text);
+            if (rdbCv.Checked) {
+                lblkq2.Text += "Chu Vi : " + TinhChuvi(dai, rong);
+            }
+            if (rdbDt.Checked)
+            {
+                lblkq2.Text = "Dien Tich : " + TinhDienTich(dai, rong);
+            }
+            }
+
+        private void txtBankinh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
